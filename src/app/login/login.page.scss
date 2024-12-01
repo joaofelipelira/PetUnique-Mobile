@@ -1,0 +1,23 @@
+/* src/app/login/login.page.scss */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  h1 {
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 18px; /* Tamanho menor para o subtítulo */
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
