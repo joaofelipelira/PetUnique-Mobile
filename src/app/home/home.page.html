@@ -1,20 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      PetUnique
+      Tela Inicial
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">PetUnique</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div id="container" class="ion-text-center">
+    <img src="assets/icon/logo.png" alt="Logo da Empresa" />
+    <h1>PetUnique
+    </h1>
+    <ion-button expand="full" (click)="acessar()">Acessar</ion-button>
+    <ion-button expand="full" (click)="registrar()">Registrar</ion-button>
   </div>
 </ion-content>

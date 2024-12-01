@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'login',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule) // Mantenha a rota para Login
   },
   {
     path: '',
@@ -12,8 +12,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    path: 'home', // Altere para 'home' ou outro nome que você deseja usar
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) // Rota para a página inicial
   },
 ];
 
