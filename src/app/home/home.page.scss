@@ -62,3 +62,10 @@ ion-button {
   --background: transparent; /* Para garantir que o fundo seja transparente */
   --color: white;            /* Cor do texto */
 }
+
+.sub-title {
+  font-family: 'Inter', sans-serif; /* Aplicar a fonte Inter */
+  font-size: 24px;                  /* Definir o tamanho da fonte como 24px */
+  color: #FFFFFF;                   /* Cor do texto */
+  margin: 10px 0;                  /* Margem superior e inferior */
+}

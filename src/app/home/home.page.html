@@ -6,10 +6,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="ion-padding custom-content">
   <div id="container" class="ion-text-center">
     <img src="assets/icon/logo.png" alt="Logo da Empresa" />
     <h1>PetUnique</h1>
+    <p class="sub-title">A saúde do seu Pet na sua Mão!</p>
     <ion-button id="acessar-button" (click)="acessar()">Acessar</ion-button>
     <ion-button id="registrar-button" (click)="registrar()">Registrar</ion-button>
   </div>
