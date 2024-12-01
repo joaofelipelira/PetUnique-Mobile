@@ -1,3 +1,9 @@
+/* home.page.scss */
+ion-content {
+  background-color: #4B10ED !important; /* Garante que o fundo da página seja #4B10ED */
+  color: white;  /* Cor do texto da página */
+}
+
 #container {
   display: flex;
   flex-direction: column;
@@ -8,65 +14,51 @@
 
 img {
   width: 150px; // ajuste conforme necessário
-  margin-bottom: 20px;
+  margin-bottom: 10px; // Reduza a margem inferior da imagem
 }
 
 h1 {
-  margin: 10px 0;
+  font-family: 'Poppins', sans-serif; /* Aplicar a fonte Poppins */
+  font-weight: bold;                  /* Definir o peso da fonte como bold */
+  font-size: 40px;                   /* Definir o tamanho da fonte como 40px */
+  color: #FFE414;                     /* Definir a cor do texto como #FFE414 */
+  margin: 20px 0;                    /* Aumente a margem superior e inferior do título */
 }
 
 ion-button {
   margin: 10px 0;
-}
-
-ion-content {
-  background-color: #4B10ED; /* Cor de fundo da página inicial */
-  color: white;              /* Cor do texto, ajuste conforme necessário */
 }
 
 #acessar-button {
   background-color: #FFE414; /* Cor do botão */
-  width: 340px;              /* Largura do botão */
-  height: 55px;              /* Altura do botão */
-  color: black;              /* Cor do texto */
-  border: none;              /* Remover borda */
-  border-radius: 5px;       /* Arredondar os cantos */
-  --background: #FFE414;     /* Definir a cor de fundo do botão */
-  --color: black;            /* Cor do texto do botão */
+  width: 340px; /* Largura do botão */
+  height: 55px; /* Altura do botão */
+  color: black; /* Cor do texto */
+  border: none; /* Remover borda */
+  border-radius: 5px; /* Arredondar os cantos */
+  --background: #FFE414; /* Cor de fundo do botão */
+  --color: black; /* Cor do texto do botão */
+  font-family: 'Inter', sans-serif; /* Aplicar a fonte Inter */
+  font-size: 24px;           /* Tamanho da fonte (ajuste conforme necessário) */
+  line-height: 29px;         /* Altura da linha para centralizar verticalmente */
 }
 
-#registrar-button {
-  width: 340px;              /* Largura do botão */
-  height: 55px;              /* Altura do botão */
-  color: white;              /* Cor do texto, ajuste conforme necessário */
-  border-radius: 5px;       /* Arredondar os cantos */
-}
 
 /* src/app/home/home.page.scss */
 
-.custom-content {
-  background-color: #4B10ED; // Cor de fundo que você deseja
-  color: white; // Cor do texto
-}
+/* Estilos para o botão "Registrar" */
+#registrar-button {
+  width: 340px;              /* Largura do botão */
+  height: 55px;              /* Altura do botão */
+  color: white;              /* Cor do texto */
+  border: 2px solid white;   /* Borda branca */
+  background-color: transparent; /* Fundo transparente */
+  border-radius: 5px;       /* Arredondar os cantos */
+  margin: 10px 0;           /* Margem superior e inferior */
+  font-family: 'Inter', sans-serif; /* Aplicar a fonte Inter */
+  font-size: 24px;           /* Tamanho da fonte (ajuste conforme necessário) */
+  line-height: 29px;         /* Altura da linha para centralizar verticalmente */
 
-#container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  --background: transparent; /* Para garantir que o fundo seja transparente */
+  --color: white;            /* Cor do texto */
 }
-
-img {
-  width: 150px; // ajuste conforme necessário
-  margin-bottom: 20px;
-}
-
-h1 {
-  margin: 10px 0;
-}
-
-ion-button {
-  margin: 10px 0;
-}
-

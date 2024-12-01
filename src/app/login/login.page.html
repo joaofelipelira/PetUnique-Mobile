@@ -9,20 +9,20 @@
     <h1>Bem Vindo de volta!</h1>
     <h2>Acesse a sua conta</h2>
 
-<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-  <ion-item>
-    <ion-label position="floating">Insira seu email</ion-label>
-    <ion-input type="email" [(ngModel)]="email" name="email" required email></ion-input>
-  </ion-item>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <ion-item>
+        <ion-label position="floating">Insira seu email</ion-label>
+        <ion-input type="email" [(ngModel)]="email" name="email" required email></ion-input>
+      </ion-item>
 
-  <ion-item>
-    <ion-label position="floating">Insira sua senha</ion-label>
-    <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-label position="floating">Insira sua senha</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+      </ion-item>
 
-  <ion-button expand="full" type="submit" [disabled]="!loginForm.valid">Entrar</ion-button>
+      <ion-button expand="full" type="submit" [disabled]="!loginForm.valid">Entrar</ion-button>
 
-  <div *ngIf="emailInvalid" class="error-message">Por favor, insira um email válido.</div>
-</form>
+      <div *ngIf="emailInvalid" class="error-message">Por favor, insira um email válido.</div>
+    </form>
   </div>
 </ion-content>

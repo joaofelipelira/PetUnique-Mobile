@@ -6,18 +6,51 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    padding-top: 20px; /* Adiciona um espaço acima do container */
   }
   
   h1 {
     margin-bottom: 10px;
+    color: #FFE414; /* Cor do texto para o título */
+    margin-top: -20px; /* Move o título um pouco mais para cima */
   }
   
   h2 {
     margin-bottom: 20px;
     font-size: 18px; /* Tamanho menor para o subtítulo */
+    align-self: flex-start; /* Alinha o subtítulo à esquerda */
+    margin-left: 20px; /* Margem à esquerda para o subtítulo */
   }
   
   .error-message {
     color: red;
     margin-top: 10px;
+  }
+  
+  /* Estilos para os inputs do formulário */
+  ion-input {
+    --background: #FFFFFF; /* Cor de fundo branca */
+    --color: #000000; /* Cor do texto preta */
+    --placeholder-color: #000000; /* Cor do placeholder */
+  }
+  
+  ion-item {
+    --background: #FFFFFF; /* Cor de fundo branca para o item */
+    --color: #000000; /* Cor do texto preta */
+  }
+
+  /* src/app/login/login.page.scss */
+
+/* Estilos para o botão "Entrar" */
+/* src/app/login/login.page.scss */
+
+/* Estilos para o botão "Entrar" */
+ion-button {
+    width: 196px; /* Largura do botão */
+    height: 55px; /* Altura do botão */
+    --background: #FFE414; /* Cor de fundo do botão */
+    --color: black; /* Cor do texto do botão */
+    border: none; /* Remover borda */
+    border-radius: 5px; /* Arredondar os cantos */
+    margin-top: 20px; /* Margem superior para espaçamento */
   }
