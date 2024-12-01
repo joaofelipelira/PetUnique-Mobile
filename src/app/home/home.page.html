@@ -6,12 +6,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
+<ion-content [fullscreen]="true" class="ion-padding custom-content">
   <div id="container" class="ion-text-center">
     <img src="assets/icon/logo.png" alt="Logo da Empresa" />
-    <h1>PetUnique
-    </h1>
-    <ion-button expand="full" (click)="acessar()">Acessar</ion-button>
-    <ion-button expand="full" (click)="registrar()">Registrar</ion-button>
+    <h1>PetUnique</h1>
+    <ion-button id="acessar-button" (click)="acessar()">Acessar</ion-button>
+    <ion-button id="registrar-button" (click)="registrar()">Registrar</ion-button>
   </div>
 </ion-content>

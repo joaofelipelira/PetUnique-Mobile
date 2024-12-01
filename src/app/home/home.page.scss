@@ -18,3 +18,55 @@ h1 {
 ion-button {
   margin: 10px 0;
 }
+
+ion-content {
+  background-color: #4B10ED; /* Cor de fundo da página inicial */
+  color: white;              /* Cor do texto, ajuste conforme necessário */
+}
+
+#acessar-button {
+  background-color: #FFE414; /* Cor do botão */
+  width: 340px;              /* Largura do botão */
+  height: 55px;              /* Altura do botão */
+  color: black;              /* Cor do texto */
+  border: none;              /* Remover borda */
+  border-radius: 5px;       /* Arredondar os cantos */
+  --background: #FFE414;     /* Definir a cor de fundo do botão */
+  --color: black;            /* Cor do texto do botão */
+}
+
+#registrar-button {
+  width: 340px;              /* Largura do botão */
+  height: 55px;              /* Altura do botão */
+  color: white;              /* Cor do texto, ajuste conforme necessário */
+  border-radius: 5px;       /* Arredondar os cantos */
+}
+
+/* src/app/home/home.page.scss */
+
+.custom-content {
+  background-color: #4B10ED; // Cor de fundo que você deseja
+  color: white; // Cor do texto
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+img {
+  width: 150px; // ajuste conforme necessário
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+ion-button {
+  margin: 10px 0;
+}
+

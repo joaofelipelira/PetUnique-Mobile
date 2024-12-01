@@ -34,4 +34,17 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+/* @import "@ionic/angular/css/palettes/dark.system.css"; */
+
+/* global.scss */
+@import "@ionic/angular/css/palettes/dark.system.css"; // Comente esta linha
+
+body {
+    background-color: #4B10ED; // Cor de fundo padrão
+    color: white; // Cor do texto padrão
+  }
+  
+  body.ion-color-dark {
+    background-color: #4B10ED; // Cor de fundo quando o tema escuro está ativo
+    color: white; // Cor do texto quando o tema escuro está ativo
+  }

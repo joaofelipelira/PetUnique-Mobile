@@ -1,2 +1,21 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+/* src/theme/variables.scss */
+/* src/theme/variables.scss */
+
+:root {
+    --ion-color-primary: #4B10ED; // Cor primária
+    --ion-color-primary-rgb: 75, 16, 237; // Cor RGB
+    --ion-color-dark: #4B10ED; // Cor de fundo para o tema escuro
+    --ion-color-dark-rgb: 75, 16, 237; // Cor RGB para o tema escuro
+    --ion-color-light: #4B10ED; // Cor de fundo para o tema claro
+  }
+  
+  body {
+    color: white; // Cor do texto padrão
+  }
+  
+  body.ion-color-dark {
+    color: white; // Cor do texto no tema escuro
+  }
