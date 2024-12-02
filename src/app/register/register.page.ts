@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,22 +7,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage {
-  registerForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
-    this.registerForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required]],
-    });
-  }
+  // Propriedades para os campos do formulário
+  name: string = '';
+  surname: string = '';
+  email: string = '';
+  password: string = '';
+  confirmPassword: string = '';
 
+  // Para verificar se as senhas coincidem
+  passwordsMismatch: boolean = false;
+
+  constructor() {}
+
+  // Função de envio do formulário
   onSubmit() {
-    if (this.registerForm.valid) {
-      console.log('Formulário de registro válido:', this.registerForm.value);
-      // Aqui você pode adicionar a lógica para registrar o usuário
+    if (this.password !== this.confirmPassword) {
+      this.passwordsMismatch = true;
     } else {
-      console.log('Formulário inválido');
+      this.passwordsMismatch = false;
+      // Aqui você pode adicionar a lógica para enviar os dados para o servidor ou outro processo
+      console.log('Formulário enviado com sucesso!');
     }
   }
 }

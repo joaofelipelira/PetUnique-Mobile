@@ -1,26 +1,55 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Registro</ion-title>
+    <ion-title>Registrar-se</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="email" formControlName="email"></ion-input>
-    </ion-item>
+  <div class="register-container">
+    <h1>Bem-Vindo!</h1>
+    <h2>Inscreva-se no PetUnique!</h2>
+    
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      
+      <!-- Campo Nome -->
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="name" name="name" required></ion-input>
+      </ion-item>
+      
+      <!-- Campo Sobrenome -->
+      <ion-item>
+        <ion-label position="floating">Sobrenome</ion-label>
+        <ion-input type="text" [(ngModel)]="surname" name="surname" required></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Senha</ion-label>
-      <ion-input type="password" formControlName="password"></ion-input>
-    </ion-item>
+      <!-- Campo Email -->
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email" name="email" required email></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Confirmar Senha</ion-label>
-      <ion-input type="password" formControlName="confirmPassword"></ion-input>
-    </ion-item>
+      <!-- Campo Senha -->
+      <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+      </ion-item>
 
-    <ion-button expand="full" type="submit" [disabled]="!registerForm.valid">Registrar</ion-button>
-  </form>
+      <!-- Campo Confirmar Senha -->
+      <ion-item>
+        <ion-label position="floating">Confirmar Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required></ion-input>
+      </ion-item>
+
+      <!-- Botão de Cadastro -->
+      <ion-button expand="full" type="submit" [disabled]="!registerForm.valid">Cadastrar</ion-button>
+
+      <!-- Mensagem de erro de senhas não coincidentes -->
+      <div *ngIf="passwordsMismatch" class="error-message">As senhas não coincidem.</div>
+    </form>
+    
+    <div class="login-link">
+      <p>Já tem uma conta? <a routerLink="/login">Faça login aqui</a></p>
+    </div>
+  </div>
 </ion-content>
