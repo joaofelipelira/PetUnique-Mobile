@@ -1,56 +1,91 @@
 /* src/app/login/login.page.scss */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
 .login-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding-top: 20px; /* Adiciona um espaço acima do container */
-  }
-  
-  h1 {
-    margin-bottom: 10px;
-    color: #FFE414; /* Cor do texto para o título */
-    margin-top: -20px; /* Move o título um pouco mais para cima */
-  }
-  
-  h2 {
-    margin-bottom: 20px;
-    font-size: 18px; /* Tamanho menor para o subtítulo */
-    align-self: flex-start; /* Alinha o subtítulo à esquerda */
-    margin-left: 20px; /* Margem à esquerda para o subtítulo */
-  }
-  
-  .error-message {
-    color: red;
-    margin-top: 10px;
-  }
-  
-  /* Estilos para os inputs do formulário */
-  ion-input {
-    --background: #FFFFFF; /* Cor de fundo branca */
-    --color: #000000; /* Cor do texto preta */
-    --placeholder-color: #000000; /* Cor do placeholder */
-  }
-  
-  ion-item {
-    --background: #FFFFFF; /* Cor de fundo branca para o item */
-    --color: #000000; /* Cor do texto preta */
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #3a0ca3; /* Cor de fundo roxa */
+  padding: 20px;
+  font-family: 'Inter', sans-serif; /* Define a fonte para todo o container */
+  font-weight: 400; /* Fonte regular */
+}
 
-  /* src/app/login/login.page.scss */
+h1, h2, ion-label, .error-message, .or-text, .register-link, .login-options, ion-input, ion-button {
+  font-family: 'Inter', sans-serif; /* Garante a fonte Inter */
+  font-weight: 400; /* Regular para todos os elementos */
+}
 
-/* Estilos para o botão "Entrar" */
-/* src/app/login/login.page.scss */
+h1 {
+  margin-bottom: 10px;
+  color: #FFE414; /* Cor amarela */
+  text-align: center;
+}
 
-/* Estilos para o botão "Entrar" */
+h2 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: white;
+  text-align: left; /* Alinha o subtítulo à esquerda */
+  width: 100%; /* Ocupa 100% da largura para alinhamento */
+  margin-left: 20px; /* Margem à esquerda para espaçamento */
+}
+
+ion-item {
+  --background: #FFFFFF; /* Fundo branco */
+  --color: #000000; /* Texto preto */
+  border-radius: 5px; /* Arredondar os cantos */
+  margin-bottom: 15px; /* Espaçamento entre inputs */
+  padding: 5px;
+}
+
+ion-input {
+  --placeholder-color: #000000; /* Placeholder preto */
+}
+
+ion-checkbox {
+  --background: #FFE414; /* Cor do checkbox */
+  --checkmark-color: #000000; /* Cor do checkmark */
+}
+
 ion-button {
-    width: 196px; /* Largura do botão */
-    height: 55px; /* Altura do botão */
-    --background: #FFE414; /* Cor de fundo do botão */
-    --color: black; /* Cor do texto do botão */
-    border: none; /* Remover borda */
-    border-radius: 5px; /* Arredondar os cantos */
-    margin-top: 20px; /* Margem superior para espaçamento */
-  }
+  width: 100%; /* Botão ocupando largura total */
+  height: 50px;
+  --background: #FFE414; /* Fundo amarelo */
+  --color: black; /* Texto preto */
+  border-radius: 10px; /* Cantos arredondados */
+  margin-top: 20px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  color: white;
+}
+
+.login-options a {
+  color: #FFE414; /* Link amarelo */
+  text-decoration: none;
+}
+
+.or-text {
+  margin-top: 20px;
+  color: white;
+}
+
+.register-link {
+  color: #FFE414;
+  text-align: center;
+}

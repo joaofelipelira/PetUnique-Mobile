@@ -6,12 +6,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding custom-content">
+<ion-content [fullscreen]="true" class="ion-padding">
   <div id="container" class="ion-text-center">
     <img src="assets/icon/logo.png" alt="Logo da Empresa" />
     <h1>PetUnique</h1>
-    <p class="sub-title">A saúde do seu Pet na sua Mão!</p>
     <ion-button id="acessar-button" (click)="acessar()">Acessar</ion-button>
     <ion-button id="registrar-button" (click)="registrar()">Registrar</ion-button>
+
+    <div *ngIf="data">
+      <h2>Dados da API:</h2>
+      <pre>{{ data | json }}</pre> <!-- Exibir os dados da API -->
+    </div>
   </div>
 </ion-content>
