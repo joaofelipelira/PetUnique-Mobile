@@ -22,8 +22,8 @@
 
       <ion-button expand="full" type="submit" [disabled]="!loginForm.valid">Entrar</ion-button>
 
-      <div *ngIf="emailInvalid" class="error-message">Por favor, insira um email válido.</div>
       <div *ngIf="loginFailed" class="error-message">Credenciais inválidas. Tente novamente.</div>
+      <div *ngIf="emailInvalid" class="error-message">Por favor, insira um email válido.</div>
     </form>
   </div>
 </ion-content>
