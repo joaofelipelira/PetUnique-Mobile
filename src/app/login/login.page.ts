@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service'; // Importar AuthService
 
 @Component({
   selector: 'app-login',
@@ -10,18 +11,32 @@ export class LoginPage implements OnInit {
   email: string = '';
   password: string = '';
   emailInvalid: boolean = false;
+  loginFailed: boolean = false;
 
-  constructor() {}
+  constructor(private router: Router, private authService: AuthService) {} // Injetar AuthService
 
   ngOnInit() {}
 
   onSubmit() {
-    // Aqui você pode adicionar a lógica para fazer login
-    console.log('Email:', this.email);
-    console.log('Senha:', this.password);
-
-    // Exemplo de validação de email
     this.validateEmail(this.email);
+    
+    if (!this.emailInvalid) {
+      this.authService.login(this.email, this.password).subscribe(
+        response => {
+          // Supondo que a resposta contenha um token de autenticação
+          if (response.token) {
+            localStorage.setItem('auth_token', response.token); // Armazenar o token
+            this.router.navigate(['/home']); // Redirecionar para a página inicial
+          } else {
+            this.loginFailed = true; // Exibir mensagem de erro
+          }
+        },
+        error => {
+          this.loginFailed = true; // Exibir mensagem de erro em caso de falha
+          console.log('Erro ao fazer login:', error);
+        }
+      );
+    }
   }
 
   validateEmail(email: string) {
