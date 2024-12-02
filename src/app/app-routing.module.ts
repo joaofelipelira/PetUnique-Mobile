@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'register', // Adiciona a rota para a página de registro
     loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule)
   },
+  {
+    path: 'success-page', // Rota para a nova página de sucesso
+    loadChildren: () => import('./success-page/success-page.module').then(m => m.SuccessPagePageModule)
+  },
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service'; // Importar AuthService
+import { AuthService } from '../services/auth.service'; // Certifique-se de que o caminho esteja correto
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,7 @@ export class LoginPage implements OnInit {
   emailInvalid: boolean = false;
   loginFailed: boolean = false;
 
-  constructor(private router: Router, private authService: AuthService) {} // Injetar AuthService
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {}
 
@@ -21,21 +21,13 @@ export class LoginPage implements OnInit {
     this.validateEmail(this.email);
     
     if (!this.emailInvalid) {
-      this.authService.login(this.email, this.password).subscribe(
-        response => {
-          // Supondo que a resposta contenha um token de autenticação
-          if (response.token) {
-            localStorage.setItem('auth_token', response.token); // Armazenar o token
-            this.router.navigate(['/home']); // Redirecionar para a página inicial
-          } else {
-            this.loginFailed = true; // Exibir mensagem de erro
-          }
-        },
-        error => {
-          this.loginFailed = true; // Exibir mensagem de erro em caso de falha
-          console.log('Erro ao fazer login:', error);
-        }
-      );
+      const isLoggedIn = this.authService.login(this.email, this.password);
+
+      if (isLoggedIn) {
+        this.router.navigate(['/success']); // Redirecionar para a nova página de sucesso
+      } else {
+        this.loginFailed = true; // Exibir mensagem de erro
+      }
     }
   }
 

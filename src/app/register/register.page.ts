@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service'; // Ajuste o caminho se necessário
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -17,17 +19,24 @@ export class RegisterPage {
 
   // Para verificar se as senhas coincidem
   passwordsMismatch: boolean = false;
+  registrationError: string = '';
 
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   // Função de envio do formulário
-  onSubmit() {
+  onSubmit(form: NgForm) { // Adicione o parâmetro form
     if (this.password !== this.confirmPassword) {
       this.passwordsMismatch = true;
     } else {
       this.passwordsMismatch = false;
-      // Aqui você pode adicionar a lógica para enviar os dados para o servidor ou outro processo
-      console.log('Formulário enviado com sucesso!');
+      const isRegistered = this.authService.register(this.email, this.password);
+
+      if (isRegistered) {
+        console.log('Formulário enviado com sucesso!');
+        this.router.navigate(['/login']); // Redireciona para a página de login após o registro
+      } else {
+        this.registrationError = 'Email já cadastrado!'; // Mensagem de erro se o email já existir
+      }
     }
   }
 }
