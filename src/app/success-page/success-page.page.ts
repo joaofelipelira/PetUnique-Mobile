@@ -10,6 +10,6 @@ export class SuccessPagePage {
   constructor(private router: Router) {}
 
   goToNewsHub() {
-    this.router.navigate(['/news-hub']); // Substitua '/news-hub' pelo caminho correto da sua página de notícias
+    this.router.navigate(['/noticias']); // Caminho correto para a página de notícias
   }
 }

@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'success-page', // Rota para a nova página de sucesso
     loadChildren: () => import('./success-page/success-page.module').then(m => m.SuccessPagePageModule)
   },
+  {
+    path: 'noticias',
+    loadChildren: () => import('./noticias/noticias.module').then( m => m.NoticiasPageModule)
+  },
 ];
 
 @NgModule({
