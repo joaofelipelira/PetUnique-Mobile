@@ -1,15 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-noticias',
   templateUrl: './noticias.page.html',
   styleUrls: ['./noticias.page.scss'],
 })
-export class NoticiasPage implements OnInit {
+export class NoticiasPage {
+  fact: string = ''; 
+  imageUrl: string = ''; 
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private http: HttpClient) {
+    this.loadDogFactAndImage();
   }
 
+  loadDogFactAndImage() {
+    this.http.get<any>('https://dogapi.dog/api/v2/facts').subscribe({
+      next: (factResponse) => {
+        const randomFact = factResponse.data[0]?.attributes.body || 'Fato não disponível.';
+        this.fact = randomFact;
+
+        this.http.get<any>('https://random.dog/woof.json').subscribe({
+          next: (imageResponse) => {
+            this.imageUrl = imageResponse.url || '';
+          },
+          error: (err) => console.error('Erro ao carregar imagem:', err),
+        });
+      },
+      error: (err) => console.error('Erro ao carregar fato:', err),
+    });
+  }
 }

@@ -1,12 +1,27 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-title>Notícias</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="container">
-    <h1>Bem-vindo ao HUB de Notícias!</h1>
-    <p>Aqui você encontrará as últimas notícias sobre cães.</p>
+<ion-content [fullscreen]="true">
+  <div class="noticias-container">
+    <h1>Bem vindo às notícias</h1>
+    <p>Aqui você encontrará as últimas novidades.</p>
+
+    <p *ngIf="!imageUrl && !fact" class="error-message">
+      Erro ao carregar dados. Tente novamente.
+    </p>
+
+    <div *ngIf="imageUrl" class="dog-image">
+      <img [src]="imageUrl" alt="Imagem de um cachorro" />
+    </div>
+
+    <div class="dog-fact">
+      <p *ngIf="fact">{{ fact }}</p>
+      <p *ngIf="!fact && imageUrl">Carregando fato...</p>
+    </div>
+
+    <ion-button expand="full" (click)="loadDogFactAndImage()">Carregar outro fato</ion-button>
   </div>
 </ion-content>
