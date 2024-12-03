@@ -43,20 +43,20 @@ ion-item {
 }
 
 ion-input {
-  --placeholder-color: #000000; /* Placeholder preto */
+  --placeholder-color: #000000; 
 }
 
 ion-checkbox {
-  --background: #FFE414; /* Cor do checkbox */
-  --checkmark-color: #000000; /* Cor do checkmark */
+  --background: #FFE414;
+  --checkmark-color: #000000; 
 }
 
 ion-button {
-  width: 100%; /* Botão ocupando largura total */
+  width: 100%; 
   height: 50px;
-  --background: #FFE414; /* Fundo amarelo */
-  --color: black; /* Texto preto */
-  border-radius: 10px; /* Cantos arredondados */
+  --background: #FFE414; 
+  --color: black; 
+  border-radius: 10px;
   margin-top: 20px;
 }
 
@@ -76,7 +76,7 @@ ion-button {
 }
 
 .login-options a {
-  color: #FFE414; /* Link amarelo */
+  color: #FFE414; 
   text-decoration: none;
 }
 
@@ -94,3 +94,11 @@ ion-button {
     color: red;
     margin-top: 10px;
   }
+
+  .top-image {
+    display: block;
+    width: 150px; 
+    height: auto; 
+    margin: 5px auto 85px; 
+  }
+  
