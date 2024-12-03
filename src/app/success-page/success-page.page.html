@@ -1,10 +1,15 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Sucesso</ion-title>
-  </ion-toolbar>
+  <ion-toolbar></ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h1>Login realizado com sucesso!</h1>
-  <p>Bem-vindo à sua conta.</p>
+  <div class="success-container">
+    <h1 class="brand">PetUnique</h1>
+    <p class="message">Login realizado com sucesso!</p>
+
+    <div class="news-section">
+      <p class="news-prompt">Acesse agora as notícias!</p>
+      <ion-button expand="block" (click)="goToNewsHub()">Ir para o Hub de notícias</ion-button>
+    </div>
+  </div>
 </ion-content>

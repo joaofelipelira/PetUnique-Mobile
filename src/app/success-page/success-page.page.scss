@@ -1,15 +1,53 @@
-/* Estilos para a página de sucesso */
-ion-content {
+.success-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    color: #FFE414;
+    margin-bottom: 20px;
+  }
+  
+  .message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 60px; /* Aumenta o espaço abaixo da mensagem */
+  }
+  
+  .news-section {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 50px; /* Move a frase e o botão para baixo */
   }
   
-  h1 {
-    color: #4B10ED; /* Cor do texto */
+  .news-prompt {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    margin-bottom: 15px;
   }
   
-  p {
-    color: #333; /* Cor do parágrafo */
+  ion-button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    --background: #FFE414; /* Cor amarela personalizada */
+    --background-hover: #d6bc12; /* Amarelo mais escuro no hover */
+    --border-radius: 8px;
+    --padding-start: 15px;
+    --padding-end: 15px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    color: #000; /* Cor do texto preta */
   }
+  
