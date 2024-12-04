@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service'; // Importe o AuthService
+import { AuthService } from '../services/auth.service'; 
 
 @Component({
   selector: 'app-login',
@@ -12,6 +12,7 @@ export class LoginPage implements OnInit {
   password: string = '';
   emailInvalid: boolean = false;
   loginFailed: boolean = false;
+  showPassword: boolean = false; // Variável para alternar entre mostrar/ocultar senha
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -21,20 +22,23 @@ export class LoginPage implements OnInit {
     this.validateEmail(this.email);
 
     if (this.emailInvalid) {
-      return; // Não prosseguir se o email for inválido
+      return;
     }
 
-    // Utilize o AuthService para verificar o login
     if (this.authService.login(this.email, this.password)) {
-      this.router.navigate(['/success-page']); // Redireciona para a tela de sucesso
-      this.loginFailed = false; // Resetar o estado de falha no login
+      this.router.navigate(['/success-page']);
+      this.loginFailed = false;
     } else {
-      this.loginFailed = true; // Definir como verdadeiro se as credenciais forem inválidas
+      this.loginFailed = true;
     }
   }
 
   validateEmail(email: string) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     this.emailInvalid = !emailPattern.test(email);
+  }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword; // Alterna entre mostrar e ocultar a senha
   }
 }

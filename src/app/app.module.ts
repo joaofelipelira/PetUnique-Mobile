@@ -6,8 +6,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http'; // Importação do HttpClientModule
 
+// Importe o pipe aqui
+import { TogglePasswordPipe } from './pipes/toggle-password.pipe'; 
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    TogglePasswordPipe  // Registre o pipe aqui
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

@@ -1,7 +1,7 @@
 /* src/app/register/register.page.scss */
 
 ion-content {
-    --background: #4B10ED; /* Fundo roxo */
+    --background: #4B10ED; 
 }
 
 h1 {
@@ -26,7 +26,7 @@ h2 {
 ion-item {
     --background: #FFFFFF;
     --color: #000000;
-    border-radius: 5px;
+    border-radius: 30px; 
     margin-bottom: 15px;
     --min-height: 50px;
     --max-height: 50px;
@@ -35,6 +35,7 @@ ion-item {
 ion-input {
     font-size: 16px;
     line-height: 1.2;
+    border-radius: 30px; 
 }
 
 ion-button {
@@ -42,7 +43,7 @@ ion-button {
     height: 55px;
     --background: #FFE414;
     --color: black;
-    border-radius: 10px;
+    border-radius: 30px; 
     margin-top: 20px;
 }
 

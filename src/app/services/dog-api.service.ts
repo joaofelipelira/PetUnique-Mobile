@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DogApiService {
-  private apiUrl = 'https://dogapi.dog/api/v2/facts'; // URL para a API de fatos sobre cães
+  private apiUrl = 'https://dogapi.dog/api/v2/facts'; 
 
   constructor(private http: HttpClient) {}
 

@@ -102,3 +102,49 @@ ion-button {
     margin: 5px auto 85px; 
   }
   
+  /* Estilo do botão de mostrar/ocultar senha */
+.toggle-password-button {
+  width: 50%; /* Reduz o tamanho do botão */
+  height: 40px; /* Reduz a altura do botão */
+  --background: #FFE414; /* Cor de fundo amarela */
+  --color: rgb(255, 255, 255); /* Cor do texto */
+  border-radius: 5px; /* Cantos arredondados */
+  margin-bottom: 10px; /* Espaçamento abaixo do botão */
+  align-self: center; /* Centraliza o botão */
+}
+
+/* Estilo do botão "Entrar" */
+ion-button {
+  width: 100%; 
+  height: 50px;
+  --background: #FFE414; 
+  --color: black; 
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Ajuste no layout do ícone */
+ion-item {
+  --background: transparent; /* Retira o fundo do item */
+  --padding-start: 0;
+  --padding-end: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+ion-icon {
+  font-size: 24px; /* Ajusta o tamanho do ícone */
+  cursor: pointer; /* Mostra o cursor de clique ao passar o mouse */
+  color: #000; /* Cor do ícone */
+  margin-left: 10px; /* Espaço à esquerda do ícone */
+}
+
+ion-item ion-label {
+  color: white; /* Cor do texto do rótulo */
+}
+
+ion-input {
+  --color: white; /* Cor do texto digitado */
+  --placeholder-color: white; /* Cor do texto do placeholder */
+}
