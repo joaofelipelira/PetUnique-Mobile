@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'; 
 import { MyService } from './my-service.service'; 
+
 describe('MyService', () => {
   let service: MyService;
   let httpMock: HttpTestingController;
@@ -27,3 +28,12 @@ describe('MyService', () => {
 
     const req = httpMock.expectOne('https://api.exemplo.com/dados');
     expect(req.request.method).toBe('GET');
+
+    // Responder à requisição com os dados simulados
+    req.flush(mockData);
+  });
+
+  afterEach(() => {
+    httpMock.verify(); // Verifica se não há requisições pendentes
+  });
+});

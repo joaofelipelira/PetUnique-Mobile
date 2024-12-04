@@ -4,21 +4,20 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http'; // Importação do HttpClientModule
+import { HttpClientModule } from '@angular/common/http'; 
 
-// Importe o pipe aqui
 import { TogglePasswordPipe } from './pipes/toggle-password.pipe'; 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TogglePasswordPipe  // Registre o pipe aqui
+    TogglePasswordPipe  
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule // Adicione o HttpClientModule aqui
+    HttpClientModule 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
