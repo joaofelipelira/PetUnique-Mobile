@@ -12,7 +12,7 @@ export class LoginPage implements OnInit {
   password: string = '';
   emailInvalid: boolean = false;
   loginFailed: boolean = false;
-  showPassword: boolean = false; // Variável para alternar entre mostrar/ocultar senha
+  showPassword: boolean = false; 
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -26,7 +26,11 @@ export class LoginPage implements OnInit {
     }
 
     if (this.authService.login(this.email, this.password)) {
-      this.router.navigate(['/success-page']);
+      const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+      localStorage.setItem('user', JSON.stringify(user));
+
+      this.router.navigate(['/success-page']); 
       this.loginFailed = false;
     } else {
       this.loginFailed = true;
@@ -39,6 +43,6 @@ export class LoginPage implements OnInit {
   }
 
   togglePasswordVisibility() {
-    this.showPassword = !this.showPassword; // Alterna entre mostrar e ocultar a senha
+    this.showPassword = !this.showPassword; 
   }
 }

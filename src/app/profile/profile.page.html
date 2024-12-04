@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-container">
+    <h2>Nome: {{ user.name }}</h2>
+    <h3>Sobrenome: {{ user.surname }}</h3>
+    <p>Email: {{ user.email }}</p>
+
+    <ion-button expand="full" (click)="logout()">Desconectar</ion-button>
+    <ion-button expand="full" (click)="goToNewsHub()">Ir para o Hub de Fatos</ion-button>
+    
+  </div>
+</ion-content>

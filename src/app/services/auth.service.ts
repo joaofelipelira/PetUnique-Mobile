@@ -4,26 +4,25 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  private users: { email: string, password: string }[] = []; // Array para armazenar os dados dos usuários
-
+  private users: { email: string, password: string }[] = [];
   constructor() {
-    this.loadUsers(); // Carrega os usuários do localStorage ao inicializar
+    this.loadUsers(); 
   }
 
   register(email: string, password: string): boolean {
     const existingUser  = this.users.find(user => user.email === email);
     if (existingUser ) {
-      return false; // Email já cadastrado
+      return false; 
     }
     this.users.push({ email, password });
-    this.saveUsers(); // Salva os usuários no localStorage
-    return true; // Registro bem-sucedido
+    this.saveUsers(); 
+    return true;
   }
 
   login(email: string, password: string): boolean {
-    // Verifica se o usuário existe e se a senha está correta
+
     const user = this.users.find(u => u.email === email && u.password === password);
-    return !!user; // Retorna true se o usuário foi encontrado e a senha está correta
+    return !!user; 
   }
 
   private saveUsers() {

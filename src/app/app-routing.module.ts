@@ -16,16 +16,20 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
-    path: 'register', // Adiciona a rota para a página de registro
+    path: 'register',
     loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule)
   },
   {
-    path: 'success-page', // Rota para a nova página de sucesso
+    path: 'success-page', 
     loadChildren: () => import('./success-page/success-page.module').then(m => m.SuccessPagePageModule)
   },
   {
     path: 'noticias',
-    loadChildren: () => import('./noticias/noticias.module').then( m => m.NoticiasPageModule)
+    loadChildren: () => import('./noticias/noticias.module').then(m => m.NoticiasPageModule)
+  },
+  {
+    path: 'profile',  
+    loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
   },
 ];
 

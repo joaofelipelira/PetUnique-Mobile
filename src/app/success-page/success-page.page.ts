@@ -10,6 +10,10 @@ export class SuccessPagePage {
   constructor(private router: Router) {}
 
   goToNewsHub() {
-    this.router.navigate(['/noticias']); // Caminho correto para a página de notícias
+    this.router.navigate(['/noticias']); 
+  }
+
+  goToProfile() {
+    this.router.navigate(['/profile']); 
   }
 }
