@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router'; // Importando Router
 
 @Component({
   selector: 'app-noticias',
@@ -7,10 +8,10 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./noticias.page.scss'],
 })
 export class NoticiasPage {
-  fact: string = ''; 
-  imageUrl: string = ''; 
+  fact: string = '';
+  imageUrl: string = '';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.loadDogFactAndImage();
   }
 
@@ -29,5 +30,9 @@ export class NoticiasPage {
       },
       error: (err) => console.error('Erro ao carregar fato:', err),
     });
+  }
+
+  goToProfile() {
+    this.router.navigate(['/profile']); 
   }
 }

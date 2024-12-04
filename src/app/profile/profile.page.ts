@@ -13,7 +13,6 @@ export class ProfilePage {
 
   ngOnInit() {
     const storedUser = localStorage.getItem('user');
-
     if (storedUser) {
       this.user = JSON.parse(storedUser);
     } else {

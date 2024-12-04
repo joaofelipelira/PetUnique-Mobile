@@ -6,12 +6,13 @@
 
 <ion-content>
   <div class="profile-container">
-    <h2>Nome: {{ user.name }}</h2>
-    <h3>Sobrenome: {{ user.surname }}</h3>
-    <p>Email: {{ user.email }}</p>
-
+    <img src="assets/icon/logo.png" alt="Logo" class="logo-image" />
+    <div class="user-info">
+      <h2 class="user-name">Nome: {{ user.name }}</h2>
+      <h3 class="user-name">Sobrenome: {{ user.surname }}</h3>
+      <p class="user-email">Email: {{ user.email }}</p>
+    </div>
     <ion-button expand="full" (click)="logout()">Desconectar</ion-button>
     <ion-button expand="full" (click)="goToNewsHub()">Ir para o Hub de Fatos</ion-button>
-    
   </div>
 </ion-content>

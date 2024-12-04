@@ -1,13 +1,20 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+    </ion-buttons>
     <ion-title>Notícias</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="profile-button" (click)="goToProfile()">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="noticias-container">
-    <h1>Bem vindo os Fatos!</h1>
-    <p>Aqui você encontrará Fatos Sobre animais.</p>
+    <h1>Bem-vindo aos Fatos!</h1>
+    <p>Aqui você encontrará Fatos sobre animais.</p>
 
     <p *ngIf="!imageUrl && !fact" class="error-message">
       Erro ao carregar dados. Tente novamente.
