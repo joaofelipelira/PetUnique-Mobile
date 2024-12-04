@@ -32,6 +32,11 @@
 
       <div *ngIf="loginFailed" class="error-message">Credenciais inválidas. Tente novamente.</div>
       <div *ngIf="emailInvalid" class="error-message">Por favor, insira um email válido.</div>
+
+      <div class="register-link">
+        <p>OU</p>
+        <a (click)="goToRegister()">Não tem um login? Se registrar</a>
+      </div>
     </form>
   </div>
 </ion-content>

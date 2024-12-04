@@ -27,9 +27,7 @@ export class LoginPage implements OnInit {
 
     if (this.authService.login(this.email, this.password)) {
       const user = JSON.parse(localStorage.getItem('user') || '{}');
-
       localStorage.setItem('user', JSON.stringify(user));
-
       this.router.navigate(['/success-page']); 
       this.loginFailed = false;
     } else {
@@ -44,5 +42,9 @@ export class LoginPage implements OnInit {
 
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword; 
+  }
+
+  goToRegister() {
+    this.router.navigate(['/register']); // Redireciona para a página de registro
   }
 }
