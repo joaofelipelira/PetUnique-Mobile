@@ -7,11 +7,18 @@
 <ion-content>
   <div class="profile-container">
     <img src="assets/icon/logo.png" alt="Logo" class="logo-image" />
-    <div class="user-info">
+    
+    <div class="user-info" *ngIf="user">
       <h2 class="user-name">Nome: {{ user.name }}</h2>
-      <h3 class="user-name">Sobrenome: {{ user.surname }}</h3>
+      <h3 class="user-surname">Sobrenome: {{ user.surname }}</h3>
       <p class="user-email">Email: {{ user.email }}</p>
     </div>
+
+    <!-- Exibe se não houver usuário -->
+    <div *ngIf="!user">
+      <p>Não há usuário logado.</p>
+    </div>
+
     <ion-button expand="full" (click)="logout()">Desconectar</ion-button>
     <ion-button expand="full" (click)="goToNewsHub()">Ir para o Hub de Fatos</ion-button>
   </div>

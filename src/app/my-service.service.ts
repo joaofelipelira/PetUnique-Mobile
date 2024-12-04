@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class MyService {
 
-  private apiUrl = 'https://api.exemplo.com/dados'; // Substitua pela sua URL da API
+  private apiUrl = 'https://api.exemplo.com/dados'; 
 
   constructor(private http: HttpClient) { }
 
