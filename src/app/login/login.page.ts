@@ -26,12 +26,20 @@ export class LoginPage implements OnInit {
     }
 
     if (this.authService.login(this.email, this.password)) {
-      const user = JSON.parse(localStorage.getItem('user') || '{}');
-      localStorage.setItem('user', JSON.stringify(user));
+     
+      const user = { 
+        name: 'Pet', 
+        surname: 'Unique',
+        email: this.email 
+      };
+
+  
+      localStorage.setItem('user', JSON.stringify(user)); 
+
       this.router.navigate(['/success-page']); 
       this.loginFailed = false;
     } else {
-      this.loginFailed = true;
+      this.loginFailed = true; 
     }
   }
 
@@ -45,6 +53,6 @@ export class LoginPage implements OnInit {
   }
 
   goToRegister() {
-    this.router.navigate(['/register']); // Redireciona para a página de registro
+    this.router.navigate(['/register']);
   }
 }

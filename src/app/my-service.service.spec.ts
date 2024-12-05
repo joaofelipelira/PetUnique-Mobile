@@ -29,11 +29,11 @@ describe('MyService', () => {
     const req = httpMock.expectOne('https://api.exemplo.com/dados');
     expect(req.request.method).toBe('GET');
 
-    // Responder à requisição com os dados simulados
+ 
     req.flush(mockData);
   });
 
   afterEach(() => {
-    httpMock.verify(); // Verifica se não há requisições pendentes
+    httpMock.verify(); 
   });
 });

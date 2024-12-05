@@ -12,17 +12,18 @@ export class ProfilePage implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
+    // Verificar se o usuário está armazenado no localStorage
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
-      this.user = JSON.parse(storedUser); // Se encontrado, converte de volta para objeto
+      this.user = JSON.parse(storedUser); // Recupera os dados do usuário do localStorage
     } else {
-      this.router.navigate(['/login']); // Redireciona para login se não houver usuário logado
+      this.router.navigate(['/login']); // Redireciona para a tela de login se não encontrar dados
     }
   }
 
   logout() {
-    localStorage.removeItem('user'); // Remove o usuário do localStorage
-    this.router.navigate(['/login']); // Redireciona para o login após desconectar
+    localStorage.removeItem('user'); // Remove os dados do usuário do localStorage
+    this.router.navigate(['/login']); // Redireciona para a tela de login após desconectar
   }
 
   goToNewsHub() {
